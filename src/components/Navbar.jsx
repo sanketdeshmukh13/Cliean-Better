@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../Navbar.css"; // Import the CSS file
+import logo from "../assets/img/logo .png"; // ✅ Add your logo in src/assets/img
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -8,8 +9,10 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        {/* Logo / Brand */}
-        <h2 className="nav-logo">Cliean Better</h2>
+        {/* ✅ Logo / Brand */}
+        <Link to="/" className="nav-logo" onClick={() => setOpen(false)}>
+          <img src={logo} alt="Cliean Better Logo" className="logo-img" />
+        </Link>
 
         {/* Desktop Links */}
         <ul className={`nav-links ${open ? "active" : ""}`}>
